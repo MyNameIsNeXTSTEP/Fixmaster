@@ -1,6 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+// @todo refactor `prod` definition later
+// see what are variants of `process.env` and how to apply each mode right
 const prod = process.env === 'production';
 module.exports = {
   mode: prod ? 'production' : 'development',
