@@ -2,7 +2,7 @@
     "name": "fixmaster",
     "version": "1.0.0",
     "description": "Web app for appointments in saloons",
-    "main": "index.ts",
+    "main": "./src/index.tsx",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "webpack serve --port 3000",
