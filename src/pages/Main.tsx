@@ -5,7 +5,6 @@ const MainPage = (): JSX.Element => {
   return <>
     <h1 >The Fixmaster app</h1 >
     <h2 >MainPage</h2 >
-    <Link to="/" >Главная </Link >
     <ul >
         <Link to="/salon/1" >Салон 1</Link><br/>
         <Link to="/salon/2" >Салон 2</Link><br/>

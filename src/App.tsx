@@ -5,11 +5,14 @@ import SalonPage from "./pages/SalonPage";
 
 const App = (): JSX.Element => {
   return (
-    <Routes>
-        <Route path="/" element={ <MainPage/> }/>
-        <Route path="/salon/:id" element={ <SalonPage/> }/>
-    </Routes>
-    );
+    <>
+    {/*<MainPage />*/}
+    <Routes >
+        <Route path="/" element={ <MainPage /> } />
+        <Route path="/salon/:id" element={ <SalonPage /> } />
+    </Routes >
+    </>
+  );
 };
 
 export default App;
