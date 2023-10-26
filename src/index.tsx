@@ -3,18 +3,12 @@ import App from "./App";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
-import salonsData from "./salonsData";
-
-const container = document.getElementById( "app-root" )!;
-const root = createRoot( container );
-
-
-
-
-root.render(
-  <React.StrictMode >
-    <BrowserRouter >
-      <App />
-    </BrowserRouter >
-  </React.StrictMode >,
+const container = document.getElementById("app-root")!;
+const rootAppElement = createRoot(container);
+rootAppElement.render(
+    <React.StrictMode>
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>
+    </React.StrictMode>,
 );

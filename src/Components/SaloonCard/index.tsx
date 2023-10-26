@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Params, useParams } from "react-router-dom";
+import React from "react";
 import salonsData from "../../salonsData";
 
+interface IProps {
+    id?: string;
+}
 
-
-const SaloonCard = (): JSX.Element => {
-  let { id } = useParams<Params>();
-
+const SaloonCard = ({ id }: IProps): JSX.Element => {
   return <div >
     <h2>{salonsData[Number(id) - 1].info.title}</h2>
     <div>{salonsData[Number(id) - 1].info.address}</div>
@@ -15,9 +14,9 @@ const SaloonCard = (): JSX.Element => {
     Салон { id } <br/>
 
     {salonsData[Number(id) - 1].masters.map(el => {
-      return <div>
-        <img src={el.image} alt="" />
-      </div>
+        return <div>
+            <img src={el.image} alt="" />
+        </div>
     })}
   </div >;
 };
