@@ -11,10 +11,27 @@ function OffcanvasExample(): JSX.Element  {
 
     return (
         <>
+            {/* @todo Don't need this `[false].map…` thing, it's bad, why you need the `map` though ? */}
             {[false].map((expand: boolean) => (
                 <Navbar expand={expand} className="bg-body-tertiary mb-3">
                     <Container fluid>
-                        <Navbar.Brand href="#">{logo}Fixmaster</Navbar.Brand>
+                        <Navbar.Brand href="#">
+                            <img src={logo} alt="logo" />
+                            Fixmaster
+                        </Navbar.Brand>
+                        {/* @todo Move `<Form…/>` search component below into another file.
+                            So move the `<Navbar.Offcanvas…/>` into another file too.
+                            Then just combine them all together like this:
+                            ./Navbar
+                                - SearchForm.tsx
+                                - NavMenu.tsx
+                            And current Navbar.tsx component would have:
+                                …return (
+                                    …<Navbar…
+                                    …<SearchForm
+                                    …<NavMenu
+                                )
+                        */}
                         <Form className="d-flex">
                             <Form.Control
                                 type="search"
