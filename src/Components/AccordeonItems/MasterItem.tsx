@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Card = styled.div`
   border: 1px solid #e0ebff;
@@ -7,6 +7,7 @@ const Card = styled.div`
   margin-bottom: 10px;
   padding: 5px 15px;
   display: flex;
+  cursor: pointer;
 `;
 const CardName = styled.div`
   font-size: 18px;
@@ -29,24 +30,25 @@ const CardImage = styled.div`
   background-color: #f0ff89;
 `;
 
-const MasterItem = ( { image = "", text = "", children = "" } ) => {
-  return (
-    <div >
-      <Card >
-        <CardImage >
-          <div >
-            <img width={"100%"} src={ `${ image }` } alt="Аватарка" />
-          </div >
-        </CardImage >
-        <CardName >Мастер { text }</CardName >
-        <div >
-          <CardJobName >Маникюр</CardJobName >
-          <CardJobName >Маникюр</CardJobName >
-          <CardJobName >Маникюр</CardJobName >
-        </div >
-      </Card >
-    </div >
-  );
+const MasterItem = ( { image = '', name = '' } ) => {
+	return (
+        <div>
+            <Card>
+                <CardImage>
+                    <div>
+                        <img width={ '100%' } src={ image } alt='Аватарка'/>
+
+                    </div>
+                </CardImage>
+                <CardName>Мастер { name }</CardName>
+                <div>
+                    <CardJobName>Маникюр</CardJobName>
+                    <CardJobName>Маникюр</CardJobName>
+                    <CardJobName>Маникюр</CardJobName>
+                </div>
+            </Card>
+        </div>
+	);
 };
 
 export default MasterItem;
