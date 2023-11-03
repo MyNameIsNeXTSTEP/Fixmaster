@@ -34,7 +34,6 @@ const RecordedPage = () => {
 	return (
 		<RecordedStyles>
 			<Container>
-
 			<div className='qr-code'>
 				QR - КОД
 			</div>

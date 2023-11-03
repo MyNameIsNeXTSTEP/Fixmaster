@@ -30,15 +30,16 @@ Card.Header = styled.div`
 const Min = styled.div`
     font-size: 12px;
 `;
-interface  ServiceItemProps{
-    text: string,
-    price: number,
-    minTime: number,
-    description: string,
-    onClick?: () => void
+
+interface ServiceItemProps {
+	text: string,
+	price: number,
+	minTime: number,
+	description: string,
+	onClick?: () => void
 }
 
-const ServiceItem = ( {text , price , minTime , description, onClick }:ServiceItemProps ) => {
+const ServiceItem = ( {text, price, minTime, description, onClick}: ServiceItemProps ) => {
 	return (
 		<MyContainer>
             <ServiceCard onClick={onClick}>
@@ -53,9 +54,12 @@ const ServiceItem = ( {text , price , minTime , description, onClick }:ServiceIt
                                 от {minTime} мин
                             </div>
                         </div>
-                    </Card.Header>{description ? <Card.Body>
-                        <Card.Text>{description}</Card.Text>
-                    </Card.Body>: ''}
+                    </Card.Header> {description
+					? <Card.Body>
+							<Card.Text>{description}</Card.Text>
+					</Card.Body>
+					: ''
+				}
                 </Card>
             </ServiceCard>
         </MyContainer>
