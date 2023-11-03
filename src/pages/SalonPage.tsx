@@ -18,12 +18,9 @@ const SalonPage = (): JSX.Element => {
 	const {id = ''} = useParams<Params>();
 	return (
 		<div>
-
             <Container>
                 <h2>Salon Page</h2>
                 <Button variant='outline-dark'><Link to='/'>Главная </Link></Button>
-
-
                 <SaloonCard id={id}/>
                 <MyContainer>
                     <Accordion defaultActiveKey='0'>

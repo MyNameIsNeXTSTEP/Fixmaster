@@ -48,9 +48,12 @@ const ServiceItem = ( {text , price , minTime , description, onClick }: IService
                                 от {minTime} мин
                             </div>
                         </div>
-                    </Card.Header>{description ? <Card.Body>
-                        <Card.Text>{description}</Card.Text>
-                    </Card.Body>: ''}
+                    </Card.Header> {description
+					? <Card.Body>
+							<Card.Text>{description}</Card.Text>
+					</Card.Body>
+					: ''
+				}
                 </Card>
             </ServiceCard>
         </MyContainer>

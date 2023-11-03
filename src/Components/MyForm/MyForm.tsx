@@ -4,14 +4,14 @@ import styled from 'styled-components';
 import * as events from 'events';
 import { Link } from 'react-router-dom';
 
-
 const MyFormStyle = styled.div`
-	button{
-		margin: 0 auto;
-	}
-	a{
-		color: #fff;
-	}
+    button {
+        margin: 0 auto;
+    }
+
+    a {
+        color: #fff;
+    }
 `;
 
 const MyForm = () => {
