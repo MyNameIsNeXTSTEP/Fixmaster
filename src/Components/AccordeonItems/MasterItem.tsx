@@ -30,13 +30,19 @@ const CardImage = styled.div`
     background-color: #f0ff89;
 `;
 
-const MasterItem = ({image = '', name = ''}) => {
+interface MasterItemProps{
+    image: string,
+    name: string,
+    onClick?: () => void;
+}
+
+const MasterItem = ( {image , name, onClick }:MasterItemProps ) => {
 	return (
-		<div>
+		<div onClick={onClick}>
             <Card>
                 <CardImage>
                     <div>
-                        <img width='100%' src={image} alt='Аватарка'/>
+                        <img width={'100%'} src={image} alt='Аватарка'/>
                     </div>
                 </CardImage>
                 <CardName>Мастер {name}</CardName>

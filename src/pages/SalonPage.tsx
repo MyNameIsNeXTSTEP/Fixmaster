@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Params, useParams } from 'react-router-dom';
-import SaloonCard from '../Components/SaloonCard/SalonCard';
+import SaloonCard from '../Components/SalonCard/SalonCard';
 import salonsData from '../salonsData';
 import { Accordion, Button, Container } from 'react-bootstrap';
 import ServiceItem, { MyContainer } from '../Components/AccordeonItems/ServiceItem';
@@ -18,7 +18,12 @@ const SalonPage = (): JSX.Element => {
 	const {id = ''} = useParams<Params>();
 	return (
 		<div>
+
             <Container>
+                <h2>Salon Page</h2>
+                <Button variant='outline-dark'><Link to='/'>Главная </Link></Button>
+
+
                 <SaloonCard id={id}/>
                 <MyContainer>
                     <Accordion defaultActiveKey='0'>
@@ -54,7 +59,8 @@ const SalonPage = (): JSX.Element => {
                     </Link>
                 </Center>
             </Container>
-        </div>);
+        </div>
+	);
 };
 
 export default SalonPage;
