@@ -8,12 +8,12 @@ type ValuePiece = Date | null;
 type Value = ValuePiece | [ ValuePiece, ValuePiece ];
 
 const RecordPage = () => {
-	const { id = '' } = useParams<Params>();
+	const {id = ''} = useParams<Params>();
 
 	return (
 		<div>
             <Container>
-                <h2>Запись на салон №{ id }</h2>
+                <h2>Запись на салон №{id}</h2>
             </Container>
         </div>
 	);
