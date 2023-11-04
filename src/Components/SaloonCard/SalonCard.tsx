@@ -11,46 +11,47 @@ interface IProps {
 
 const Card = styled.div`
 
-  padding: 5px 15px 10px;
-  border: 1px solid #c7c7c7;
-  border-radius: 8px;
+    padding: 5px 15px 10px;
+    border: 1px solid #c7c7c7;
+    border-radius: 8px;
 
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 
-  img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-  }
+    img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
 `;
 
 const SocialRow = styled.div`
-  display: flex;
-  margin-bottom: 30px;
-
-  .left {
     display: flex;
-    gap: 10px;
-    margin-right: auto;
-  }
+    margin-bottom: 30px;
+
+    .left {
+        display: flex;
+        gap: 10px;
+        margin-right: auto;
+    }
 `;
 
 const InfoRow = styled.div`
-  margin-bottom: 30px;
-  font-size: 20px;
+    margin-bottom: 30px;
+    font-size: 20px;
 
-  .adress {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 3px;
-  }
+    .adress {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 3px;
+    }
 
-  .chart {
-    font-weight: 600;
-  }
+    .chart {
+        font-weight: 600;
+    }
 `;
 
-const SaloonCard = ( { id }: IProps ): JSX.Element => {
+ // @todo Надо упростить код
+const SaloonCard = ({id}: IProps): JSX.Element => {
 	const title = salonsData[Number( id ) - 1].info.title;
 	const address = salonsData[Number( id ) - 1].info.address;
 	const work_schedule = salonsData[Number( id ) - 1].info.work_schedule;
@@ -60,13 +61,13 @@ const SaloonCard = ( { id }: IProps ): JSX.Element => {
 	return (
 		<div>
             <Card>
-                <h2>{ title }</h2>
+                <h2>{title}</h2>
                 <Carousel>
-                    { salonsData[Number( id ) - 1].info.images.map( el => {
+                    {salonsData[Number( id ) - 1].info.images.map( el => {
 						return <Carousel.Item>
-                            <img src={ el } alt=''/>
+                            <img src={el} alt=''/>
                         </Carousel.Item>;
-					} ) }
+					} )}
                 </Carousel>
             </Card>
 
@@ -87,7 +88,7 @@ const SaloonCard = ( { id }: IProps ): JSX.Element => {
                         </Button>
                     </a>
                 </div>
-                <Link to={ `/record/${ id }` }>
+                <Link to={`/record/${id}`}>
                     <Button variant='info'>Записаться онлайн</Button>
                 </Link>
             </SocialRow>
@@ -98,9 +99,9 @@ const SaloonCard = ( { id }: IProps ): JSX.Element => {
                         <path d='M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z'/>
                         <path d='M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'/>
                     </svg>
-                    Ул. { address }</div>
+                    Ул. {address}</div>
                 <div className='chart'>График работы:</div>
-                <div>{ work_schedule } { time_begin }-{ time_end }</div>
+                <div>{work_schedule} {time_begin}-{time_end}</div>
                 <div>Закроется через 30мин</div>
             </InfoRow>
         </div>);

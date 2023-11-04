@@ -8,9 +8,9 @@ const App = (): JSX.Element => {
 	return (
 		<>
 			<Routes>
-				<Route path='/' element={ <MainPage/> }/>
-				<Route path='/salon/:id' element={ <SalonPage/> }/>
-				<Route path='/record/:id' element={ <RecordPage/> }/>
+				<Route path='/' element={<MainPage/>}/>
+				<Route path='/salon/:id' element={<SalonPage/>}/>
+				<Route path='/record/:id' element={<RecordPage/>}/>
 			</Routes>
 		</>
 	);
