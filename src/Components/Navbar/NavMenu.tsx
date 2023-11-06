@@ -1,12 +1,12 @@
-import Navbar from "react-bootstrap/Navbar";
-import Offcanvas from "react-bootstrap/Offcanvas";
-import Nav from "react-bootstrap/Nav";
-import React from "react";
+import Navbar from 'react-bootstrap/Navbar';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import Nav from 'react-bootstrap/Nav';
+import React from 'react';
 
 const NavMenu = () => {
     return (
         <>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-false`} />
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-false`}/>
             <Navbar.Offcanvas
                 id={`offcanvasNavbar-expand-false`}
                 aria-labelledby={`offcanvasNavbarLabel-expand-false`}

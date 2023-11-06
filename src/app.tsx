@@ -1,12 +1,16 @@
 import React from 'react';
-import SaloonCard from './Components/SaloonCard';
 import Navbar from "./Components/Navbar/Navbar";
+import {Route, Routes} from "react-router-dom";
+import MainPage from "./pages/MainPage/MainPage";
+import SalonPage from "./pages/SalonPage/SalonPage";
 
 const App = (): JSX.Element => {
     return <>
         <Navbar />
-        <h1>The Fixmaster app</h1>
-        <SaloonCard/>
+        <Routes>
+            <Route path="/" element={<MainPage/>}/>
+            <Route path="/salon/:id" element={<SalonPage/>} />
+        </Routes>
     </>
 };
 
