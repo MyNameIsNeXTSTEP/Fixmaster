@@ -30,13 +30,13 @@ const CardImage = styled.div`
     background-color: #f0ff89;
 `;
 
-interface MasterItemProps {
+interface IProps {
 	image: string,
 	name: string,
 	onClick?: () => void;
 }
 
-const MasterItem = ( {image, name, onClick}: MasterItemProps ) => {
+const MasterItem = ({image, name, onClick}: IProps) => {
 	return (
 		<div onClick={onClick}>
             <Card>

@@ -12,6 +12,14 @@ const MyFormStyle = styled.div`
     a {
         color: #fff;
     }
+
+    .form-btn-check {
+        display: flex;
+
+        button {
+            height: auto;
+        }
+    }
 `;
 
 const MyForm = () => {
@@ -21,7 +29,7 @@ const MyForm = () => {
 	};
 	return (
 		<MyFormStyle>
-			<Form onSubmit={( e ) => e.preventDefault()}>
+			<Form onSubmit={(e) => e.preventDefault()}>
 				<Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
 					<Form.Label>Имя</Form.Label>
 					<Form.Control required type='name' placeholder='Введите ваше имя...'/>
@@ -34,10 +42,10 @@ const MyForm = () => {
 					<Form.Label>Комментарий</Form.Label>
 					<Form.Control as='textarea' rows={3}/>
 				</Form.Group>
-				<Form.Group className='mb-3'>
+				<Form.Group className='mb-3 form-btn-check'>
 					<Form.Check required label='Даю согласие на обработку персональных данных' feedback='You must agree before submitting.' feedbackType='invalid'/>
+					<Button onClick={handleButton} type='submit'><Link to='/recorded'>Записаться</Link></Button>
 				</Form.Group>
-				<Button onClick={handleButton} type='submit'><Link to='/recorded'>Записаться</Link></Button>
 			</Form>
 		</MyFormStyle>
 	);

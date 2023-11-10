@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import salonsData from '../../salonsData';
 import { Button, Carousel } from 'react-bootstrap';
 import styled from 'styled-components';
-import MasterItem from '../AccordeonItems/MasterItem';
 
 interface IProps {
 	id?: string;
@@ -50,7 +49,7 @@ const InfoRow = styled.div`
     }
 `;
 
-const SalonCard = ( {id}: IProps ): JSX.Element => {
+const SalonCard = ({id}: IProps): JSX.Element => {
 	const title = salonsData[Number( id ) - 1].info.title;
 	const address = salonsData[Number( id ) - 1].info.address;
 	const work_schedule = salonsData[Number( id ) - 1].info.work_schedule;

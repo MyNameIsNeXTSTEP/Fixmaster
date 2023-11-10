@@ -5,8 +5,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { Button, Col, Row } from 'react-bootstrap';
 import dayjs, { Dayjs } from 'dayjs';
 import styled from 'styled-components';
-import { CustomToggle } from '../../pages/RecordPage';
-import { Link } from 'react-router-dom';
+import { CustomToggle } from '../AccordeonItems/RecordPageAccordion';
 
 const BtnsContainer = styled.div`
     padding: 20px 0;
@@ -16,14 +15,14 @@ const BtnsContainer = styled.div`
     justify-content: space-between;
 `;
 
-interface CalendarProps {
-	onClick: ( name?: string, value?: Dayjs | null | undefined ) => void,
+interface IProps {
+	onClick: (name?: string, value?: Dayjs | null | undefined) => void,
 };
 
-const Calendar = ( {onClick}: CalendarProps ) => {
+const Calendar = ({onClick}: IProps) => {
 	const timeTheCloc = [ '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00' ];
 	const [ value, setValue ] = React.useState<Dayjs | null>( dayjs( new Date() ) );
-	const btnClick = ( el = '' ) => {
+	const btnClick = (el = '') => {
 		onClick( el, value );
 	};
 
@@ -31,7 +30,7 @@ const Calendar = ( {onClick}: CalendarProps ) => {
 
 		<div>
 			<LocalizationProvider dateAdapter={AdapterDayjs}>
-				<DatePicker value={value} onChange={( newValue ) => setValue( newValue )}/>
+				<DatePicker value={value} onChange={(newValue) => setValue( newValue )}/>
 			</LocalizationProvider>
 
 			<BtnsContainer>
