@@ -12,20 +12,24 @@ module.exports = {
         publicPath: '/',
     },
     module: {
-    rules: [
-        {
-            test: /\.(ts|tsx)$/,
-            exclude: /node_modules/,
-            resolve: {
-                extensions: ['.ts', '.tsx', '.js', '.json'],
+        rules: [
+            {
+                test: /\.(ts|tsx)$/,
+                exclude: /node_modules/,
+                resolve: {
+                    extensions: ['.ts', '.tsx', '.js', '.json'],
+                },
+                use: 'ts-loader',
             },
-            use: 'ts-loader',
-        },
-        {
-            test: /\.css$/,
-            use: [MiniCssExtractPlugin.loader, 'css-loader'],
-        },
-    ]
+            {
+                test: /\.css$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+            },
+            {
+                test: /\.(png|jp(e*)g|svg|gif)$/,
+                type: "asset/resource",
+            },
+        ]
     },
     devServer: {
         historyApiFallback: true,
