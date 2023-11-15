@@ -19,10 +19,7 @@ const SalonPage = (): JSX.Element => {
 	return (
 		<div>
             <Container>
-                <h2>Salon Page</h2>
-                <Button variant='success'><Link to='/'>Главная </Link></Button>
                 <SaloonCard id={id}/>
-                {/*@todo Аккордеоны вынести в отдельные компоненты */}
                 <MyContainer>
                     <Accordion defaultActiveKey='0'>
                         <Accordion.Item eventKey='0'>

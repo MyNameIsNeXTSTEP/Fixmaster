@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import salonsData from '../../salonsData';
+
 import { Button, Carousel } from 'react-bootstrap';
 import styled from 'styled-components';
-import MasterItem from '../AccordeonItems/MasterItem';
+import salonsData from '../../salonsData';
 
 interface IProps {
 	id?: string;
