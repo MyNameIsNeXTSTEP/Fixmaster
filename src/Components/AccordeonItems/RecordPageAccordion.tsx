@@ -1,12 +1,13 @@
 import { Link, Params, useParams } from 'react-router-dom';
 import React, { ReactNode, useState } from 'react';
 import { Dayjs } from 'dayjs';
-import { Accordion, Button, Container, useAccordionButton } from 'react-bootstrap';
+import { Accordion, useAccordionButton } from 'react-bootstrap';
 import salonsData from '../../salonsData';
-import ServiceItem, { MyContainer } from './ServiceItem';
+import ServiceItem from './ServiceItem';
 import MasterItem from './MasterItem';
 import Calendar from '../Calendar/Calendar';
 import MyForm from '../MyForm/MyForm';
+import { MyContainer } from './styled';
 
 interface IProps {
 	children: ReactNode;

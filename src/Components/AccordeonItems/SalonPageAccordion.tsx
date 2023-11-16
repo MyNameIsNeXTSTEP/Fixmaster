@@ -1,9 +1,11 @@
 import React from 'react';
-import ServiceItem, { MyContainer } from './ServiceItem';
+import ServiceItem from './ServiceItem';
 import { Accordion } from 'react-bootstrap';
 import salonsData from '../../salonsData';
 import MasterItem from './MasterItem';
 import { Params, useParams } from 'react-router-dom';
+import { MyContainer } from './styled';
+
 const RecordPageAccordion = () => {
 	const {id = ''} = useParams<Params>();
 
