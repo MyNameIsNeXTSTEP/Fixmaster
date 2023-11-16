@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Button, Container } from 'react-bootstrap';
+import { Button, Container, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const RecordedStyles = styled.div`
@@ -36,11 +36,22 @@ const RecordedStyles = styled.div`
 `;
 
 const RecordedPage = () => {
+	const [ preloaderVisible, setPreloaderVisible ] = useState( true );
+	useEffect( () => {
+		const timer = setTimeout( () => {
+			setPreloaderVisible( false );
+		}, 1500 );
+		return () => clearTimeout( timer );
+	}, [] );
     return (
         <RecordedStyles>
 			<Container>
 			<div className='qr-code'>
-				QR - КОД
+			{preloaderVisible ?
+				<Spinner animation="border" variant="light" />
+				:
+				'QR - КОД'
+			}
 			</div>
 			<h4>Вы успешно записаны!</h4>
 			<h1>t.me/fix_master_bot</h1>
