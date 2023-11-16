@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9c5a10c2-1f12-428c-9b8e-e27bcae75bab" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2XEmtbGwnUxVlnphGLC9UYxrNWi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mandz/OneDrive/Рабочий стол/Fixmaster/src/assets&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\mandz\\OneDrive\\Рабочий стол\\Fixmaster\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mandz\OneDrive\Рабочий стол\Fixmaster\src\assets" />
+      <recent name="C:\Users\mandz\OneDrive\Рабочий стол\Fixmaster\src\pages\SalonPage\ExampleCarouselImage" />
+      <recent name="C:\Users\mandz\OneDrive\Рабочий стол\Fixmaster\src\img" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9c5a10c2-1f12-428c-9b8e-e27bcae75bab" name="Changes" comment="" />
+      <created>1698202831072</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698202831072</updated>
+      <workItem from="1698202836245" duration="24237000" />
+      <workItem from="1698431853688" duration="4473000" />
+      <workItem from="1698570796357" duration="169000" />
+      <workItem from="1698570987595" duration="2054000" />
+      <workItem from="1698574218958" duration="602000" />
+      <workItem from="1698586032020" duration="1835000" />
+      <workItem from="1698641862772" duration="21323000" />
+      <workItem from="1699249139853" duration="4272000" />
+      <workItem from="1699288117913" duration="1164000" />
+      <workItem from="1699289310172" duration="6548000" />
+      <workItem from="1699454208509" duration="8112000" />
+      <workItem from="1700057252389" duration="22000" />
+      <workItem from="1700057286887" duration="5230000" />
+      <workItem from="1700147377507" duration="45000" />
+      <workItem from="1700147432630" duration="5282000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
