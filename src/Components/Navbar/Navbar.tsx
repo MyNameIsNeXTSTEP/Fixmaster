@@ -3,6 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import React from 'react';
 import SearchForm from './SearchForm';
 import NavMenu from './NavMenu';
+import { Link } from 'react-router-dom';
 
 function OffcanvasExample(): JSX.Element {
 
@@ -11,10 +12,12 @@ function OffcanvasExample(): JSX.Element {
     return (
         <>
             <Navbar expand={false} className="bg-body-tertiary mb-3">
-                <Container fluid>
-                    <Navbar.Brand href="#">
+                <Container>
+                <Link to='/'>
+                    <Navbar.Brand href="/">
                         <img src={logo} alt="logo"/>
                     </Navbar.Brand>
+                </Link>
                     <SearchForm/>
                     <NavMenu/>
                 </Container>
