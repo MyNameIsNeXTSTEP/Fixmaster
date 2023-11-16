@@ -1,17 +1,19 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
-import { Params, useParams } from 'react-router-dom';
-import 'react-calendar/dist/Calendar.css';
+import RecordPageAccordion from '../Components/AccordeonItems/RecordPageAccordion';
+import { Link, Params, useParams } from 'react-router-dom';
+import salonsData from '../salonsData';
+import { Button, Container } from 'react-bootstrap';
 
 const RecordPage = () => {
-	const {id = ''} = useParams<Params>();
+	const {id} = useParams<Params>();
 
 	return (
-		<div>
-            <Container>
-                <h2>Запись на салон №{id}</h2>
-            </Container>
-        </div>
+		<Container>
+			<h2>Запись на салон {salonsData[Number( id ) - 1].info.title}</h2>
+			<Button variant='outline-dark'><Link to='/'>Главная </Link></Button>
+
+            <RecordPageAccordion/>
+        </Container>
 	);
 };
 

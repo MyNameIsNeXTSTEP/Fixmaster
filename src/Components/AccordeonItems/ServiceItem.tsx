@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Card } from 'react-bootstrap';
+import { MyContainer } from './styled';
 
 const ServiceCard = styled.div`
     cursor: pointer;
@@ -16,9 +17,6 @@ const ServiceCard = styled.div`
         white-space: nowrap;
     }
 `;
-export const MyContainer = styled.div`
-    margin: 10px 0;
-`;
 
 Card.Header = styled.div`
     display: flex;
@@ -26,14 +24,19 @@ Card.Header = styled.div`
     justify-content: space-between;
     padding: 0px 15px;
 `;
-const Min = styled.div`
-    font-size: 12px;
-`;
 
-const ServiceItem = ({text = '', price = 0, minTime = 0, description = ''}) => {
+interface  IServiceItemProps{
+    text: string,
+    price: number,
+    minTime: number,
+    description: string,
+    onClick?: () => void
+}
+
+const ServiceItem = ( {text , price , minTime , description, onClick }: IServiceItemProps ) => {
 	return (
 		<MyContainer>
-            <ServiceCard>
+            <ServiceCard onClick={onClick}>
                 <Card>
                     <Card.Header>
                         <div className='card-title'>{text}</div>
@@ -45,11 +48,12 @@ const ServiceItem = ({text = '', price = 0, minTime = 0, description = ''}) => {
                                 от {minTime} мин
                             </div>
                         </div>
-                    </Card.Header>{description
+                    </Card.Header> {description
 					? <Card.Body>
-                        <Card.Text>{description}</Card.Text>
-                    </Card.Body>
-					: ''}
+							<Card.Text>{description}</Card.Text>
+					</Card.Body>
+					: ''
+				}
                 </Card>
             </ServiceCard>
         </MyContainer>
