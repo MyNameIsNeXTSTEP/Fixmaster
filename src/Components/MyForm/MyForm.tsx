@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Button, Form } from 'react-bootstrap';
 import styled from 'styled-components';
 import * as events from 'events';
@@ -24,15 +24,32 @@ const MyFormStyle = styled.div`
 
 const MyForm = () => {
 
+	const [nameError, setNameError] = useState('')
+
 	const handleButton = () => {
 		console.log( 'po' );
 	};
+
+	const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
+		let result = /^[а-яА-Я ]+$/;
+		if (!result.test(String(e.target.value).toLowerCase()) || e.target.value.length < 2){
+			setNameError('Некорректное имя пользователя')
+		} else setNameError('')
+	}
+
+	const blurName = (e: React.FocusEvent<HTMLInputElement>) => {
+		if (e.target.value.length === 0) {
+			setNameError('Имя не может быть пустым')
+		}
+	}
+
 	return (
 		<MyFormStyle>
 			<Form onSubmit={(e) => e.preventDefault()}>
 				<Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
 					<Form.Label>Имя</Form.Label>
-					<Form.Control required type='name' placeholder='Введите ваше имя...'/>
+					<Form.Control onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleName(e)} onBlur={(e: React.FocusEvent<HTMLInputElement>) => blurName(e)} required type='name' placeholder='Введите ваше имя...'/>
+					{nameError && <div style={{color: 'red'}}>{nameError}</div>}
 				</Form.Group>
 				<Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
 					<Form.Label>Телефон</Form.Label>
