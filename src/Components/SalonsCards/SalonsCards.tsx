@@ -14,21 +14,28 @@ const rtf = new Intl.RelativeTimeFormat('ru', {
 
 function BasicExample({id}: ISaloon) {
 
-    const [inTime, setInTime] = useState('')
+    const [inEndTime, setInEndTime] = useState('')
+    const [inStartTime, setInStartTime] = useState('')
 
     useEffect(() => {
-        const min = new Date().getMinutes()
-        const hour = new Date().getHours()
-        const hourEndNum = Number(timeEnd.slice(0,2))
-        const minEndNum = Number(timeEnd.slice(-2))
-        if (hourEndNum - hour < 1) {
-            setInTime('')
-        } else if (hourEndNum - hour === 1) {
-            setInTime(rtf.format(60 - min, 'minute'))
-        } else if (hourEndNum - hour > 1 && minEndNum === 0 && min < 30) {
-            setInTime(rtf.format(hourEndNum - hour, 'hour'))
-        } else if (hourEndNum - hour > 1 && minEndNum === 0 && min > 30) {
-            setInTime(rtf.format(hourEndNum - hour - 1, 'hour'))
+        const hourEnd = Number(timeEnd.split(':')[0])
+        const minEnd = Number(timeEnd.split(':')[1])
+        const hourStart = Number(timeStart.split(':')[0])
+        const minStart = Number(timeStart.split(':')[1])
+
+        const tEnd = new Date().setHours(hourEnd, minEnd, 0)
+        const tStart = new Date().setHours(hourStart, minStart, 0)
+        const timeNow = new Date().getTime()
+        const distance = tEnd - timeNow;
+        if (distance > tEnd - tStart) {
+            const distanceStart = tStart - timeNow
+            const hours = Math.floor((distanceStart / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((distanceStart / 1000 / 60) % 60);
+            hours < 1 ? setInStartTime(rtf.format(minutes, 'minute')) : setInStartTime(rtf.format(hours, 'hour'))
+        } else if (distance > 0) {
+            const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((distance / 1000 / 60) % 60);
+            hours < 1 ? setInEndTime(rtf.format(minutes, 'minute')) : setInEndTime(rtf.format(hours, 'hour'))
         }
     }, [])
 
@@ -38,6 +45,7 @@ function BasicExample({id}: ISaloon) {
     const img = salonsData[id - 1].info.images[0]
     const address = salonsData[id - 1].info.address
     const timeEnd = salonsData[id - 1].info.time_end
+    const timeStart = salonsData[id - 1].info.time_begin
     const status = salonsData[id - 1].info.status
 
     return (
@@ -50,7 +58,8 @@ function BasicExample({id}: ISaloon) {
                         {address}
                     </Card.Text>
                     <Card.Text>
-                        {inTime && inTime}
+                        {inEndTime && `Закрыто ${inEndTime}`}
+                        {inStartTime && `Открыто ${inStartTime}`}
                     </Card.Text>
                     <Card.Text>
                         {status ? 'Открыто' : 'Закрыто'}
