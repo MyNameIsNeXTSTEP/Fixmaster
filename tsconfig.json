@@ -1,8 +1,12 @@
 {
     "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "custom-module-type": ["types/custom-module-type"]
+      },
       "esModuleInterop": true,
       "jsx": "react",
-      "module": "esnext",
+      // "module": "esnext",
       "moduleResolution": "node",
       "lib": [
         "dom",
@@ -10,9 +14,10 @@
       ],
       "strict": true,
       "sourceMap": true,
-      "target": "esnext",
+      // "target": "esnext",
     },
     "exclude": [
       "node_modules"
-    ]
+    ],
+    "include": ["/**/*.ts"],
 }
