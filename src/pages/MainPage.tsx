@@ -15,10 +15,10 @@ const MainPage = (): JSX.Element => {
 
 	return (
         <Wrapper>
-            {salonsData.map(i => {
+            {salonsData.map(salon => {
                 return (
-                    <Link style={{textDecoration: 'none'}} to={`/salon/${i.info.id}`}>
-                        <SalonsCards id={i.info.id}/>
+                    <Link style={{textDecoration: 'none'}} to={`/salon/${salon.info.id}`}>
+                        <SalonsCards id={salon.info.id}/>
                     </Link>
                 )
             })}
