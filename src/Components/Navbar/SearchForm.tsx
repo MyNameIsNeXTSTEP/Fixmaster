@@ -4,8 +4,6 @@ import React  from 'react';
 
 const SearchForm = (): JSX.Element => {
 
-    const widthWindow: number = window.innerWidth
-
     return (
         <Form className="d-flex">
             <Form.Control
@@ -13,7 +11,7 @@ const SearchForm = (): JSX.Element => {
                 placeholder="Найти"
                 aria-label="Search"
             />
-            {widthWindow > 787 ?<Button variant="outline-success">Search</Button> : <></>}
+            {window.innerWidth > 787 ?<Button variant="outline-success">Search</Button> : <></>}
         </Form>
     )
 }

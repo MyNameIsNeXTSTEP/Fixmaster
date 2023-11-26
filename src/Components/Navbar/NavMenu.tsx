@@ -3,6 +3,8 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import Nav from 'react-bootstrap/Nav';
 import React from 'react';
 import styled from "styled-components";
+import Logo from "../../assets/logo";
+import {Link} from "react-router-dom";
 
 const MenuTitle = styled.div`
   display: flex;
@@ -25,8 +27,6 @@ const SecondText = styled.div`
 
 const NavMenu = () => {
 
-    const logo = require('../../assets/logo.svg') as string;
-
     return (
         <>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-false`}/>
@@ -38,7 +38,7 @@ const NavMenu = () => {
                 <Offcanvas.Header>
                     <Offcanvas.Title id={`offcanvasNavbarLabel-expand-false`}>
                         <MenuTitle>
-                            <img style={{width: '50px', height: '50px'}} src={logo}/>
+                            <Logo width={'50'} height={'50'}/>
                             <TextTitle>
                                 <MainText>FIXMASTER</MainText>
                                 <SecondText>Сервис удобного бронирования услуг</SecondText>
