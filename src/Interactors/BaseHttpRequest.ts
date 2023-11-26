@@ -17,7 +17,6 @@ class BaseHttpRequest implements IBaseHttpRequest {
         const axiosConfig = this.configureRequest(this.url.origin, request);
         try {
             const response = await axios.request<ResponseData>(axiosConfig);
-            console.log(response.data);
             return {
                 isSuccess: true,
                 payload: response.data,
