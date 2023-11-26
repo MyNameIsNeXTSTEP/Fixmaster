@@ -15,7 +15,7 @@ export interface IRequestAxios {
 };
 
 export interface IRequest extends RequestInit {
-    uri: string,
+    path: string,
     method: TRequestMethod,
     headers?: Record<string, string>,
     queryParams?: Record<string, any>,

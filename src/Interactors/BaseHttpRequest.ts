@@ -1,10 +1,10 @@
 import axios, { AxiosRequestConfig } from 'axios';
-// import { stringify } from 'querystring';
-import { IRequestAxios, IRequest, BaseErrorBody, TResponse, EHttpRequestMethods} from './types';
+import { IRequestAxios, IRequest, BaseErrorBody, TResponse } from './types';
+import { stringify } from 'querystring';
 
 interface IBaseHttpRequest {
     send: <ResponseData>(request: IRequest) => Promise<TResponse<ResponseData, BaseErrorBody>>;
-    getConfig: (baseURL: string, request: IRequest & IRequestAxios) => AxiosRequestConfig;
+    configureRequest: (baseURL: string, request: IRequest & IRequestAxios) => AxiosRequestConfig;
 };
 
 class BaseHttpRequest implements IBaseHttpRequest {
@@ -14,7 +14,7 @@ class BaseHttpRequest implements IBaseHttpRequest {
     public async send<ResponseData>(
         request: IRequest,
     ): Promise<TResponse<ResponseData, BaseErrorBody>> {
-        const axiosConfig = this.getConfig(this.url.origin, request);
+        const axiosConfig = this.configureRequest(this.url.origin, request);
         try {
             const response = await axios.request<ResponseData>(axiosConfig);
             console.log(response.data);
@@ -28,20 +28,20 @@ class BaseHttpRequest implements IBaseHttpRequest {
         };
     };
 
-    public getConfig(baseURL: string, request: IRequest & IRequestAxios): AxiosRequestConfig {
-        const { uri, headers, method, body, queryParams, responseType } = request;
+    public configureRequest(baseURL: string, request: IRequest & IRequestAxios): AxiosRequestConfig {
+        const { path, headers, method, body, queryParams, responseType } = request;
         const axiosConfig: AxiosRequestConfig = {
             baseURL,
-            url: uri,
+            url: path,
             method,
             headers: {
                 ...headers,
             },
         };
-        // if (queryParams) {
-        //     axiosConfig.params = queryParams;
-        //     axiosConfig.paramsSerializer = (param) => stringify(param);
-        // }
+        if (queryParams) {
+            axiosConfig.params = queryParams;
+            axiosConfig.paramsSerializer = (param) => stringify(param);
+        }
         if (responseType) {
             axiosConfig.responseType = responseType;
         }

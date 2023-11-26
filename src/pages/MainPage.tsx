@@ -1,19 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BaseHttpRequest from '../Interactors/doApiRequest';
-import { EHttpRequestMethods } from '../Interactors/types';
-
-const url = new URL(`http://${process.env.FIXMASTER_API_URL}`);
-// @todo Delete after testing on prod
-console.log(
-    new BaseHttpRequest(url).send({
-        uri: '/api/business',
-        method: EHttpRequestMethods.GET,
-        headers: {
-            'Acces-Control-Allow-Origin': '*',
-        }
-    })
-);
 
 const MainPage = (): JSX.Element => {
 	return (
