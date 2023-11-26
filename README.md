@@ -6,6 +6,6 @@ Local development:
 - Clone this repository locally: `git clone <repo_url_from_github>`
 - Run `npm install` command, you'll need NodeJS and npm installed already
 - To start the server locally run: `npm start` and then go to 3000 port on localhost (by default)
-- **IMPORTANT** locally need to fill the `.env.prod` and `.env.dev` based on `.env.example`
+- **IMPORTANT** locally in the root of the project need to create and fill the `.env.prod` and `.env.dev` based on `.env.example` exactly
 
 Build & deploy: // to be defined later
