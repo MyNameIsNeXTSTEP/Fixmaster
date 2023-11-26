@@ -1,14 +1,19 @@
 import { ResponseType } from 'axios';
 
-export enum EHttpRequestMethods {
+export enum EHttpRequestMethodsWithoutBodies {
     GET = 'GET',
-    POST = 'POST',
     DELETE = 'DELETE',
-    PUT = 'PUT',
-    PATCH = 'PATCH',
 };
 
-export type TRequestMethod = keyof typeof EHttpRequestMethods;
+export enum EHttpRequestMethodsWithBodies {
+    POST = 'POST',
+    PUT = 'PUT',
+    PATCH = 'PATCH',
+}
+
+export const HttpRequestMethods = { ...EHttpRequestMethodsWithoutBodies, ...EHttpRequestMethodsWithBodies };
+
+export type TRequestMethod = keyof typeof HttpRequestMethods;
 
 export interface IRequestAxios {
     responseType?: ResponseType,

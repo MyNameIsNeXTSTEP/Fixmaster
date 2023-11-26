@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import { IRequestAxios, IRequest, BaseErrorBody, TResponse } from './types';
+import { IRequestAxios, IRequest, BaseErrorBody, TResponse, EHttpRequestMethodsWithBodies } from './types';
 import { stringify } from 'querystring';
 
 interface IBaseHttpRequest {
@@ -44,7 +44,7 @@ class BaseHttpRequest implements IBaseHttpRequest {
         if (responseType) {
             axiosConfig.responseType = responseType;
         }
-        if (['POST', 'PUT', 'PATCH'].includes(method)) {
+        if (method in { ...EHttpRequestMethodsWithBodies }) {
             axiosConfig.data = body;
         }
         return axiosConfig;
