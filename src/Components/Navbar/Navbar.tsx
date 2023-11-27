@@ -4,10 +4,9 @@ import React from 'react';
 import SearchForm from './SearchForm';
 import NavMenu from './NavMenu';
 import { Link } from 'react-router-dom';
+import Logo from "../../assets/logo";
 
 function OffcanvasExample(): JSX.Element {
-
-    const logo = require("../../assets/logo.svg") as string;
 
     return (
         <>
@@ -15,7 +14,7 @@ function OffcanvasExample(): JSX.Element {
                 <Container>
                 <Link to='/'>
                     <Navbar.Brand href="/">
-                        <img src={logo} alt="logo"/>
+                        <Logo width={'25'} height={'36'}/>
                     </Navbar.Brand>
                 </Link>
                     <SearchForm/>

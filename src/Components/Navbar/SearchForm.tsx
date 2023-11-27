@@ -11,7 +11,7 @@ const SearchForm = (): JSX.Element => {
                 placeholder="Найти"
                 aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            {window.innerWidth > 787 ?<Button variant="outline-success">Search</Button> : <></>}
         </Form>
     )
 }
