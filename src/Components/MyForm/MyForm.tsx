@@ -30,7 +30,7 @@ const MyForm = () => {
     };
 
     const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
-        let result = /^[а-яА-Я ]+$/;
+        const result = /^[а-яА-Я ]+$/;
         if (!result.test(String(e.target.value).toLowerCase()) || e.target.value.length < 2){
             setNameError('Некорректное имя пользователя')
         } else setNameError('')
