@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import RecordPageAccordion from '../Components/AccordeonItems/RecordPageAccordion';
-import { Link, Params, useParams } from 'react-router-dom';
-import salonsData from '../salonsData';
-import { Button, Container } from 'react-bootstrap';
+import { Params, useParams } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
+import { PreloaderAccordion } from '../Components/PreLoaders/PreloaderAccordion';
 
 const RecordPage = () => {
-	const {id} = useParams<Params>();
+
+	const [preloaderVisible, setPreloaderVisible] = useState(true);
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setPreloaderVisible(false);
+		}, 1500);
+		return () => clearTimeout(timer);
+	}, []);
 
 	return (
 		<Container>
-			<h2>Запись на салон {salonsData[Number( id ) - 1].info.title}</h2>
-			<Button variant='outline-dark'><Link to='/'>Главная </Link></Button>
-
-            <RecordPageAccordion/>
-        </Container>
+			{preloaderVisible ? <PreloaderAccordion /> : <RecordPageAccordion />}
+		</Container>
 	);
 };
 

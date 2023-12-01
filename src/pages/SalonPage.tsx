@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, Params, useParams } from 'react-router-dom';
 import SaloonCard from '../Components/SalonCard/SalonCard';
 import { Button, Container } from 'react-bootstrap';
 import styled from 'styled-components';
 import SalonPageAccordion from '../Components/AccordeonItems/SalonPageAccordion';
+import { PreloaderAccordion } from '../Components/PreLoaders/PreloaderAccordion';
+import { PreloaderSalonCard } from '../Components/PreLoaders/PreloaderSalonCard';
 
 const Center = styled.div`
     width: 100%;
@@ -13,23 +15,30 @@ const Center = styled.div`
 `;
 
 const SalonPage = (): JSX.Element => {
-	const {id = ''} = useParams<Params>();
+	const { id = '' } = useParams<Params>();
+	const [preloaderVisible, setPreloaderVisible] = useState(true);
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setPreloaderVisible(false);
+		}, 1500);
+		return () => clearTimeout(timer);
+	}, []);
 	return (
 		<div>
-            <Container>
-                <h2>Salon Page</h2>
-                <Button variant='outline-dark'><Link to='/'>Главная </Link></Button>
-                <SaloonCard id={id}/>
-
-                <SalonPageAccordion/>
-
-                <Center>
-                    <Link to={`/record/${id}`}>
-                        <Button variant='info'>Записаться онлайн</Button>
-                    </Link>
-                </Center>
-            </Container>
-        </div>
+			<Container>
+				{preloaderVisible
+					? <PreloaderSalonCard />
+					: <SaloonCard id={id} />}
+				{preloaderVisible
+					? <PreloaderAccordion />
+					: <SalonPageAccordion />}
+				<Center>
+					<Link to={`/record/${id}`}>
+						<Button variant='info'>Записаться онлайн</Button>
+					</Link>
+				</Center>
+			</Container>
+		</div>
 	);
 };
 
