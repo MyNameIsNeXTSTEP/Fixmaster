@@ -6,7 +6,6 @@ import { PreloaderSalonCard } from '../Components/PreLoaders/PreloaderSalonCard'
 
 const MainPage = (): JSX.Element => {
     return (
-
         <Container>
         <ul>
             <Link to='/salon/1'>Салон 1</Link><br/>

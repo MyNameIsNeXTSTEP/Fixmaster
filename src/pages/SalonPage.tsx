@@ -15,35 +15,31 @@ const Center = styled.div`
 `;
 
 const SalonPage = (): JSX.Element => {
-    const {id = ''} = useParams<Params>();
-    const [ preloaderVisible, setPreloaderVisible ] = useState( true );
-    useEffect( () => {
-        const timer = setTimeout( () => {
-            setPreloaderVisible( false );
-        }, 1500 );
-        return () => clearTimeout( timer );
-    }, [] );
-    return (
-        <div>
-            <Container>
-            {preloaderVisible ? <PreloaderSalonCard/>: <SaloonCard id={id}/>}
-
-
-
-            {preloaderVisible ? <PreloaderAccordion/>: <SalonPageAccordion/>}
-
-            <Center>
-
-            <Link to={`/record/${id}`}>
-
-                <Button variant='info'>Записаться онлайн</Button>
-
-            </Link>
-
-            </Center>
-            </Container>
-        </div>
-    );
+	const { id = '' } = useParams<Params>();
+	const [preloaderVisible, setPreloaderVisible] = useState(true);
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setPreloaderVisible(false);
+		}, 1500);
+		return () => clearTimeout(timer);
+	}, []);
+	return (
+		<div>
+			<Container>
+				{preloaderVisible
+					? <PreloaderSalonCard />
+					: <SaloonCard id={id} />}
+				{preloaderVisible
+					? <PreloaderAccordion />
+					: <SalonPageAccordion />}
+				<Center>
+					<Link to={`/record/${id}`}>
+						<Button variant='info'>Записаться онлайн</Button>
+					</Link>
+				</Center>
+			</Container>
+		</div>
+	);
 };
 
 export default SalonPage;

@@ -36,30 +36,29 @@ const RecordedStyles = styled.div`
 `;
 
 const RecordedPage = () => {
-	const [ preloaderVisible, setPreloaderVisible ] = useState( true );
-	useEffect( () => {
-		const timer = setTimeout( () => {
-			setPreloaderVisible( false );
-		}, 1500 );
-		return () => clearTimeout( timer );
-	}, [] );
-    return (
-        <RecordedStyles>
+	const [preloaderVisible, setPreloaderVisible] = useState(true);
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setPreloaderVisible(false);
+		}, 1500);
+		return () => clearTimeout(timer);
+	}, []);
+	return (
+		<RecordedStyles>
 			<Container>
-			<div className='qr-code'>
-			{preloaderVisible ?
-				<Spinner animation="border" variant="light" />
-				:
-				'QR - КОД'
-			}
-			</div>
-			<h4>Вы успешно записаны!</h4>
-			<h1>t.me/fix_master_bot</h1>
-			<p className='text'>Что бы отслеживать статус заявки перейдите по ссылке и запустите бота</p>
-			<Button variant='outline-dark'><Link to='/'>Вернуться на главную</Link></Button>
+				<div className='qr-code'>
+					{preloaderVisible
+						? <Spinner animation="border" variant="light" />
+						: 'QR - КОД'
+					}
+				</div>
+				<h4>Вы успешно записаны!</h4>
+				<h1>t.me/fix_master_bot</h1>
+				<p className='text'>Что бы отслеживать статус заявки перейдите по ссылке и запустите бота</p>
+				<Button variant='outline-dark'><Link to='/'>Вернуться на главную</Link></Button>
 			</Container>
 		</RecordedStyles>
-    );
+	);
 };
 
 export default RecordedPage;

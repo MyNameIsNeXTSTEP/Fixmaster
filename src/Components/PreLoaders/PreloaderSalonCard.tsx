@@ -1,6 +1,7 @@
 import { Card, InfoRow, PlaceholderItem, SocialRow } from '../AccordeonItems/styled';
 import { Placeholder, Spinner } from 'react-bootstrap';
 import React from 'react';
+
 export const PreloaderSalonCard = () => {
     return <div>
             <Card>
