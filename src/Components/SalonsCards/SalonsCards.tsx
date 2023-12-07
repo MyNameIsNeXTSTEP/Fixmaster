@@ -6,7 +6,6 @@ import MapPin from "../../assets/map-pin";
 interface ISaloon {
     id: number
 }
-
 const SalonsCards = ({id}:ISaloon): JSX.Element => {
 
     const title = salonsData[id - 1].info.title

@@ -10,7 +10,6 @@ const Wrapper = styled.div`
   justify-content: center;
 `
 
-
 const MainPage = (): JSX.Element => {
 
 	return (
