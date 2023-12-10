@@ -7,7 +7,7 @@ import RecordedPage from './pages/RecordedPage';
 import MainPage from './pages/MainPage';
 
 const App = (): JSX.Element => {
-	return <>
+    return <>
         <Navbar />
         <Routes>
             <Route path="/" element={<MainPage/>}/>

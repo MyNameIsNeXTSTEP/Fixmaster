@@ -1,15 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SalonsCards from "../Components/SalonsCards/SalonsCards";
+import salonsData from "../salonsData";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`
 
 const MainPage = (): JSX.Element => {
+
 	return (
-        <ul>
-            <Link to='/salon/1'>Салон 1</Link><br/>
-            <Link to='/salon/2'>Салон 2</Link><br/>
-            <Link to='/salon/3'>Салон 3</Link><br/>
-            <Link to='/salon/4'>Салон 4</Link><br/>
-            <Link to='/salon/5'>Салон 5</Link><br/>
-        </ul>
+        <Wrapper>
+            {salonsData.map(salon => {
+                return (
+                    <Link style={{textDecoration: 'none'}} to={`/salon/${salon.info.id}`}>
+                        <SalonsCards id={salon.info.id}/>
+                    </Link>
+                )
+            })}
+        </Wrapper>
     );
 };
 
