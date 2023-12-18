@@ -47,7 +47,7 @@ const Links = styled.div`
   }
 `
 
-const AgreementDataPage = (): JSX.Element => {
+const AgreementPolicyPage = (): JSX.Element => {
     return (
         <Wrapper>
             <Links>
@@ -102,4 +102,4 @@ const AgreementDataPage = (): JSX.Element => {
     )
 }
 
-export default AgreementDataPage
+export default AgreementPolicyPage
