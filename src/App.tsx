@@ -5,6 +5,7 @@ import SalonPage from "./pages/SalonPage";
 import RecordPage from './pages/RecordPage';
 import RecordedPage from './pages/RecordedPage';
 import MainPage from './pages/MainPage';
+import AgreementPolicyPage from "./pages/AgreementPolicyPage";
 
 const App = (): JSX.Element => {
     return <>
@@ -14,6 +15,7 @@ const App = (): JSX.Element => {
             <Route path='/salon/:id' element={<SalonPage/>}/>
             <Route path='/record/:id' element={<RecordPage/>}/>
             <Route path='/recorded' element={<RecordedPage/>}/>
+            <Route path={'/agreement-policy'} element={<AgreementPolicyPage/>}/>
         </Routes>
     </>
 };

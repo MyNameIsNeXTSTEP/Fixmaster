@@ -17,12 +17,12 @@ const TextTitle = styled.div`
 `
 
 const MainText = styled.div`
-  font-size: 50px;
+  font-size: 40px;
 `
 
 const SecondText = styled.div`
   font-weight: normal;
-  font-size: 15px;
+  font-size: 13px;
 `
 
 const NavMenu = () => {
