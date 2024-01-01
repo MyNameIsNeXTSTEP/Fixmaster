@@ -7,6 +7,7 @@ import { PreloaderAccordion } from '../Components/PreLoaders/PreloaderAccordion'
 const RecordPage = () => {
 
 	const [preloaderVisible, setPreloaderVisible] = useState(true);
+	const { id = '' } = useParams<Params>();
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -17,7 +18,7 @@ const RecordPage = () => {
 
 	return (
 		<Container>
-			{preloaderVisible ? <PreloaderAccordion /> : <RecordPageAccordion />}
+			{preloaderVisible ? <PreloaderAccordion id={id} /> : <RecordPageAccordion />}
 		</Container>
 	);
 };

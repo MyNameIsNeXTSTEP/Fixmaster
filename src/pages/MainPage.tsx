@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PreloaderAccordion } from '../Components/PreLoaders/PreloaderAccordion';
 import { Container } from 'react-bootstrap';
-import { PreloaderSalonCard } from '../Components/PreLoaders/PreloaderSalonCard';
 
 const MainPage = (): JSX.Element => {
     return (

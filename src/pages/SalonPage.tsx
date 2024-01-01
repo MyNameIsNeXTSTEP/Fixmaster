@@ -30,7 +30,7 @@ const SalonPage = (): JSX.Element => {
 					? <PreloaderSalonCard />
 					: <SaloonCard id={id} />}
 				{preloaderVisible
-					? <PreloaderAccordion />
+					? <PreloaderAccordion id={id} />
 					: <SalonPageAccordion />}
 				<Center>
 					<Link to={`/record/${id}`}>

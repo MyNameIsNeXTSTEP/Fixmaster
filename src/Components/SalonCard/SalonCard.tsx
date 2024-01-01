@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import salonsData from '../../salonsData';
 import { Button, Carousel } from 'react-bootstrap';
 import { Card, InfoRow, SocialRow } from '../AccordeonItems/styled';
-import tg from '../../assets/telegram.svg'
-import wh from '../../assets/whatsapp.svg'
-import lc from '../../assets/location.svg'
+import Telegram from "../../assets/Telegram";
+import Whatsapp from "../../assets/Whatsapp";
+import Location from "../../assets/Location";
 
 interface IProps {
 	id?: string;
@@ -34,12 +34,12 @@ const SalonCard = ({ id }: IProps): JSX.Element => {
 				<div className='left'>
 					<a href='#!'>
 						<Button>
-							<img src={tg} alt='' />
+							<Telegram/>
 						</Button>
 					</a>
 					<a href='#!'>
 						<Button variant='success'>
-							<img src={wh} alt='' />
+							<Whatsapp/>
 						</Button>
 					</a>
 				</div>
@@ -50,7 +50,7 @@ const SalonCard = ({ id }: IProps): JSX.Element => {
 
 			<InfoRow>
 				<div className='adress'>
-					<img src={lc} alt='' />
+					<Location/>
 					Ул. {address}</div>
 				<div className='chart'>График работы:</div>
 				<div>{work_schedule} {time_begin}-{time_end}</div>
