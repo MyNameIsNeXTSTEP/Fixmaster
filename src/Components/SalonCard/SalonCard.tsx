@@ -13,9 +13,9 @@ interface IProps {
 const SalonCard = ({ id }: IProps): JSX.Element => {
 	const title = salonsData[Number(id) - 1].info.title;
 	const address = salonsData[Number(id) - 1].info.address;
-	const work_schedule = salonsData[Number(id) - 1].info.work_schedule;
-	const time_begin = salonsData[Number(id) - 1].info.time_begin;
-	const time_end = salonsData[Number(id) - 1].info.time_end;
+	const workSchedule = salonsData[Number(id) - 1].info.work_schedule;
+	const timeBegin = salonsData[Number(id) - 1].info.time_begin;
+	const timeEnd = salonsData[Number(id) - 1].info.time_end;
 
 	return (
 		<div>
@@ -53,7 +53,7 @@ const SalonCard = ({ id }: IProps): JSX.Element => {
 					<Location/>
 					Ул. {address}</div>
 				<div className='chart'>График работы:</div>
-				<div>{work_schedule} {time_begin}-{time_end}</div>
+				<div>{workSchedule} {timeBegin}-{timeEnd}</div>
 				<div>Закроется через 30мин</div>
 			</InfoRow>
 		</div>);

@@ -15,14 +15,17 @@ const Center = styled.div`
 `;
 
 const SalonPage = (): JSX.Element => {
+
 	const { id = '' } = useParams<Params>();
 	const [preloaderVisible, setPreloaderVisible] = useState(true);
+
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			setPreloaderVisible(false);
 		}, 1500);
 		return () => clearTimeout(timer);
 	}, []);
+
 	return (
 		<div>
 			<Container>

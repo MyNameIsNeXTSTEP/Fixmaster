@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+	import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Button, Container, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -36,13 +36,16 @@ const RecordedStyles = styled.div`
 `;
 
 const RecordedPage = () => {
+
 	const [preloaderVisible, setPreloaderVisible] = useState(true);
+
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			setPreloaderVisible(false);
 		}, 1500);
 		return () => clearTimeout(timer);
 	}, []);
+
 	return (
 		<RecordedStyles>
 			<Container>
