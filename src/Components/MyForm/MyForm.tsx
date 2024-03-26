@@ -52,7 +52,7 @@ const MyForm = () => {
                 </Form.Group>
                 <Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
                     <Form.Label>Телефон</Form.Label>
-                    <Form.Control required type='tel' placeholder='Введите ваше номер телефона...'/>
+                    <Form.Control required type='tel'/>
                 </Form.Group>
                 <Form.Group className='mb-3' controlId='exampleForm.ControlTextarea1'>
                     <Form.Label>Комментарий</Form.Label>
